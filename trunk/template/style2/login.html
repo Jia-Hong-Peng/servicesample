@@ -1,0 +1,148 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-tw">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title>樣版系統登入</title>
+
+<script language="javascript" type="text/javascript">
+
+function apclick()
+{
+	if(window.event.keyCode == 13)
+		{
+		if(form1.id.value != '' && form1.password.value != '')
+			get_access();
+
+		if(form1.id.focus())
+			form1.password.focus();
+		if(form1.password.focus())
+			form1.id.focus();
+		}
+}
+
+function get_access()
+{
+  if(form1.id.value == '')
+  {
+     alert("請輸入帳號!");
+     form1.id.focus();
+     return false;
+  }
+  if(form1.password.value == '')
+  {
+     alert("請輸入密碼!");
+     form1.password.focus();
+     return false;
+  }
+
+  //form1.action = "login_verify.asp";
+  form1.submit();
+
+}
+
+</script>
+
+<style type="text/css">
+body {
+	background-color: #D5D7F0;
+}
+
+td.label{
+	font-size: 13px;
+	font-weight: bold;
+    color: #55545b;
+    letter-spacing:3px;
+    text-align:right;
+    text-valign:middle;
+}
+
+input.inputText{
+    font-family:Arial;
+    letter-spacing:1pt; 
+    border:1px solid #969696; 
+    background: #ffeedd;
+}
+
+
+</style>
+
+</head>
+
+<body onload="document.all.id.focus();">
+
+<center>
+
+<form id="form1" method="post" action="LoginVerify.aspx" target="_top" onsubmit="get_access();return false;" >
+
+<input type="hidden" name="page" value="LoginVerify" />
+
+<div style="width:375px;margin-left:5px; margin-top:80px;background-color: #d5d7f0;">
+
+<span style="color: #71652c; font:16px; letter-spacing:3px;">
+    <strong>
+    樣版系統登入
+    </strong>
+</span> 
+        
+  
+<hr style="color:#e5e5e3;" />
+
+<div style="text-align:center;background: url(image/logo_img.png) center no-repeat;  width:346px; height:236px;">
+
+<table border="0" cellpadding="5" style=" margin-top:128px;" >
+
+<tr>
+    <td class="label" style="width:35% ">帳號</td>
+    <td style="width:65% ">
+        <input name="id" type="text" size="20" class="inputText" onkeypress="apclick()" />
+    </td>
+</tr>
+<tr>
+    <td class="label">密碼</td>
+    <td>
+        <input name="password" type="password" size="20" class="inputText" onkeypress = "apclick()" />
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2" class="label" >
+      <input type="submit" id="submit" value="確定" style="width:46px; height:20px; border:1px solid #999999 ; font-size:11px; color:#000;" />
+    </td>
+</tr>
+   
+</table>  
+
+</div>
+  
+<div id = "help_description" style="color: #001122; font-size:12px; letter-spacing:3px;">
+<br /><br />
+<!--
+本系統會自動判斷登入者身份，<br />
+或於登入後提供身份選擇。<br />
+-->
+登入確定後，將清除前一位登入者之資訊<br />
+為避免造成混淆，<span  style ="color:red">請勿</span>在同一台電腦登入<br />
+兩位使用者帳號。
+<br /><br />
+</div>
+
+<br />
+  
+<hr style="color:#e5e5e3;" />
+  
+<div id = "footnote" style="color: #71652c; font-size:12px; letter-spacing:3px;">
+本系統由清雲大學資工系 Eva. Lab 開發。<br />
+根據範本：Sevvice Sample v4。
+</div>
+  
+</div>
+
+</form>
+
+</center>
+  
+</body>
+
+</html>
