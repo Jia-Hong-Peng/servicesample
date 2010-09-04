@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+
+<script language='javascript'>
+
+function insertbook(){	
+	form1.page.value = "Insert";
+	form1.action='service.aspx';
+	form1.submit();	
+}
+
+	
+function updatebook(){
+	form1.page.value = "Update";
+	form1.action='service.aspx';
+	form1.submit();	
+}
+
+	
+</script>
+
+</HEAD>
+
+<Body>
+
+<form name='form1' method='post'>
+<TABLE border=1 CellSpacing=0 width="100%">
+	<TR><TH BGCOLOR="#FFFFEA" width="20%">代碼</TH><TD><input type='text' name='bookid' value='__bookid__' size=60 /></TD></TR>
+	<TR><TH BGCOLOR="#FFFFEA" width="20%">書名</TH><TD><input type='text' name='title' value='__title__' size=60 /></TD></TR>
+	<TR><TH BGCOLOR="#FFFFEA" width="20%">作者</TH><TD><input type='text' name='auther' value='__auther__' size=60 /></TD></TR>
+	<TR><TH BGCOLOR="#FFFFEA" width="20%">出版商</TH><TD><input type='text' name='publisher' value='__publisher__' size=60 /></TD></TR>
+	<TR><TH BGCOLOR="#FFFFEA" width="20%">出版年</TH><TD><input type='text' name='bookyear' value='__year__' size=60 /></TD></TR>
+	<TR><TH BGCOLOR="#FFFFEA" width="20%">價格</TH><TD><input type='text' name='price' value='__price__' size=60 /></TD></TR>
+</TABLE>
+
+<br>
+
+<input type='button' name='insert' value='新增' onclick='insertbook()'/>
+<input type='button' name='update' value='修改' onclick='updatebook()'/>
+<input type='hidden' name='page' value='' />
+</form>
+
+<br>
+<a href="service.aspx?page=Default">回首頁</a>
+<br>	
+</Body>
+</HTML>
