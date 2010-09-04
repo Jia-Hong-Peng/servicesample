@@ -1,0 +1,64 @@
+
+TEXTAREA	     { font-family: Arial; font-size: 8pt; border: 1px solid #4B4B4B; background-color: #FFFFFF; }
+
+.Transparant_niveau0 { }
+.Transparant_niveau1 { filter:alpha(opacity=60); -moz-opacity:0.60; opacity: 0.60; }
+.Transparant_niveau2 { filter:alpha(opacity=40); -moz-opacity:0.40; opacity: 0.40; }
+.Transparant_niveau3 { filter:alpha(opacity=95); -moz-opacity:0.95; opacity: 0.95; }
+
+.Menu		     { filter:alpha(opacity=92); -moz-opacity:0.92; opacity: 0.92; background-color:#FFFFFF; border: 1px solid #444444 }
+.MenuNormal	     { font-family: Arial; font-size: 8pt; color: #222222; cursor:default; }
+.MenuSelect	     { background-color:#DDDDDD; font-family: Arial; font-size: 8pt; color: #222222; cursor:default; }
+.MenuBloc	     { font-family: Arial; font-size: 8pt; color: #999999; cursor:default; }
+.MenuBlocSelect	     { background-color:#DDDDDD; font-family: Arial; font-size: 8pt; color: #222222; cursor:default; }
+
+.MenuNormal2	     { font-family: Arial; font-size: 9pt; color: #222222; cursor:default; }
+.MenuSelect2	     { background-color:#DDDDDD; font-family: Arial; font-size: 9pt; color: #222222; cursor:default; }
+
+.Pointiller	     { border: 1px dotted #FFB167; }
+
+
+.INPUTPASSWRD        { border: 1px solid #FFFFFF }
+.BODYSCR	     { SCROLLBAR-ARROW-COLOR: #CCCCCC; SCROLLBAR-TRACK-COLOR: #CCCCCC; SCROLLBAR-BASE-COLOR: #BBBBBB; } 
+.BODYSCR2	     {  SCROLLBAR-FACE-COLOR: #FFFFFF; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #25348B; SCROLLBAR-3DLIGHT-COLOR: #25348B; SCROLLBAR-ARROW-COLOR: #25348B; SCROLLBAR-TRACK-COLOR: #F5F7F6; SCROLLBAR-DARKSHADOW-COLOR: #F5F7F6; }
+
+
+.textetrespetit	     { font-family: Arial; font-size: 8pt; color: #FFFFFF; }
+.textetresmoyen	     { font-family: Arial; font-size: 10pt; color: #FFFFFF; }
+.textetresmoyen2	{ font-family: Arial; font-size: 10pt; color: #333333; }
+.textetresgrand	     { font-family: Arial; font-size: 14pt; color: #111111; }
+
+.textetresgrando3     { font-family: Arial; font-size: 13pt; color: #333333; font-weight: bold; }
+.textetresgrando2     { font-family: Arial; font-size: 14pt; color: #333333; }
+.textetresgrando     { font-family: Arial; font-size: 14pt; color: #FFFFFF; }
+
+.textehorloge	     { font-family: Arial; font-size: 9pt; color: #FFFFFF;text-decoration: none; cursor:default; }
+
+.textetresgrand	     { font-family: Arial; font-size: 14pt; color: #333333;text-decoration:none; }
+.textetresgrand:hover    { font-family: Arial; font-size: 14pt; color: #111111;text-decoration:underline; }
+
+.barremenu    { filter:alpha(opacity=88); -moz-opacity:0.88; opacity: 0.88; background-image: url('../menu/barre_menu.jpg'); }
+.barre_btdem    { background-image: url('../menu/bt_demarrer.jpg'); font-family: Arial; font-size: 13pt; color: #EEEEEE; font-style: italic; font-weight: bold; cursor:default; }
+.barre_btdemd    { background-image: url('../menu/bt_demarrer_dessus.jpg'); font-family: Arial; font-size: 13pt; color: #FFFFFF; font-style: italic; font-weight: bold; cursor:default; }
+.barretitre    { background-image: url('../menu/barremenu.jpg'); }
+
+
+.fenetre_fond  { border: 1px solid #444444; }
+.fenetre_titre  { background-image: url('titre.gif'); font-family: Arial; font-size: 10pt; color: #FFFFFF; font-weight: bold; cursor:default }
+.fenetre_taille  { background-color:#ECE9D8; border-top: 1px solid #FFFFFF; cursor: se-resize; }
+.fenetre_deplace { background-color:#000000; filter:alpha(opacity=0); -moz-opacity:0; opacity: 0; }
+.fenetre_session { background-image: url('../ouverture/grille.gif'); }
+
+.fenetre_normal { z-index:11; }
+.fenetre_select { z-index:12; }
+.fenetre_zone  {  background-color:#FFFFFF; filter:alpha(opacity=15); -moz-opacity:0.15; opacity: 0.15; border-right-style: solid; border-right-color: #000000 }
+
+.menu_normal { background-image: url('../menu/bt_fenetre_normal.gif'); font-family: Arial; font-size: 10pt; color: #FFFFFF; cursor:default; }
+.menu_select { background-image: url('../menu/bt_fenetre_select.gif'); font-family: Arial; font-size: 10pt; color: #FFFFFF; cursor:default; }
+.menu_dessus { background-image: url('../menu/bt_fenetre_dessus.gif'); font-family: Arial; font-size: 10pt; color: #FFFFFF; cursor:default; }
+.menu_vide {  }
+.menu_texte { font-family: Arial; font-size: 8pt; color: #FFFFFF; }
+
+
+.fenetre_nonactive  { background-color:#000000; filter:alpha(opacity=0); -moz-opacity:0; opacity: 0; }
+
