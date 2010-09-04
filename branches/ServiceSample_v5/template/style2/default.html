@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-tw">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title>Default樣版</title>
+
+<script type="text/javascript" src="js/tree.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+
+
+<style type="text/css">
+    img {BORDER: 0px;nobar:expression(this.galleryImg='no');} /*去掉當滑鼠放到圖片上時，出現下載、儲存提示的圖形工具條*/
+</style>
+
+
+<script type="text/javascript">
+<!--
+
+/************************************************************************************************************
+			底下 搭配 img 的 onload() 事件 來 做圖片預載的動作，
+			呼叫後 可 達到 圖片確實載入的狀態，
+			使用時，請將 需預載的圖片 URL 均輸入到 array 中。 
+/************************************************************************************************************/
+//設定圖片URL
+var preLoadImages = new Array();
+preLoadImages[0]="images/bg/AIP桌面(白天)拷貝.JPG";
+preLoadImages[1]="images/bg/pcgames0623Vista1.jpg";
+preLoadImages[2]="images/bg/AIPdesktop.JPG";
+preLoadImages[3]="images/logo.gif";
+
+//讀取圖片
+var imagePreLoadCounter = -1;
+
+function imagePreLoad(){
+
+    var preloadimagescount = document .getElementById ("preloadimagescount");
+    var preloadimagescount_no = document .getElementById ("preloadimagescount_no");
+    var preLoadImageTagInHtmlBody = document .getElementById ("preLoadImageTagInHtmlBody");
+
+    //alert (preLoadImages.length + "\n" + imagePreLoadCounter + "\n" + preLoadImages[imagePreLoadCounter]);
+
+    imagePreLoadCounter++;  //注意，這個 counter 務必要先加 1 才能去重設 preLoadImageTagInHtmlBody.src，
+                            //避免 因為一設定 即完成 onload，而持續呼叫此函數，
+                            //而counter 永遠沒有加 1，形成無窮回圈，導致出現 stack =0 的error
+    preloadimagescount.innerHTML = "" + preLoadImages.length + " ";
+    preloadimagescount_no.innerHTML = "" + (imagePreLoadCounter+1) + " ";
+    
+    if (imagePreLoadCounter < preLoadImages.length ) {
+        preLoadImageTagInHtmlBody.src = preLoadImages[imagePreLoadCounter];
+    }
+    else {
+        showPage();
+    }
+
+}
+
+
+//圖片 預載後 想做的事，寫這邊
+//這裡，我是將 "載入中...."頁 隱藏，並將真正要顯示的主頁 顯示 出來
+//使用 visibility 這個屬性 比 display 屬性好，因為 display = "none" 會把物件清掉，下次要再重新產生或載入
+function showPage(){
+    var onloading = document .getElementById ("onloading");
+    var mainboard = document .getElementById ("mainboard");
+
+    onloading.style .visibility  = "hidden";
+    mainboard.style .visibility  = "visible";
+
+}
+
+
+/************************************************************************************************************
+			初始化本頁
+/************************************************************************************************************/
+function init(){
+    
+    imagePreLoad();
+    
+    var functionlist = new Array();
+    /*
+    functionlist[0] = "1,0,檔案, test1";
+    functionlist[1] = "2,0,編輯, test2";
+    functionlist[2] = "3,1,test3, test3";
+    functionlist[3] = "4,2,test4, test4";
+    functionlist[4] = "5,2,test5, test5";
+    functionlist[5] = "6,0,檢視, test6";
+    functionlist[6] = "7,3,test7, http://www.cyu.edu.tw";
+    functionlist[7] = "8,3,test8, test8";
+    functionlist[8] = "9,5,test9, test9";
+    functionlist[9] = "10,5,test10, test10";
+    */
+    functionlist[0] = "1,0,檔案, test1";
+    functionlist[1] = "2,0,測試, test1";
+    functionlist[2] = "3,0,離開, test1";
+    functionlist[3] = "4,1,歡迎頁, Default.aspx";
+    functionlist[4] = "5,2,瀏覽, Edit.aspx";
+    functionlist[5] = "6,2,新增, Insert.aspx";
+    functionlist[6] = "7,2,更新, Update.aspx";
+    functionlist[7] = "8,3,登出, Logout.aspx";
+   
+   
+    var menuTree = new JsTree(functionlist);
+    
+    var workframe = document .getElementById ("workframe");
+    var subMenuContainer = document .getElementById ("subMenuContainer");
+    var menubar = document .getElementById ("menubar");
+    
+    
+    //alert("test");
+    //alert(theworkframe.style.visibility  );
+    //alert("test2");
+    var menu = new jsMenu(menubar, "menu" , menuTree, "20pt", "", subMenuContainer, workframe );
+    
+    
+    
+    //alert(menuTree.root.lastChild.id);
+
+    
+}
+
+
+//************************************************************************************************************
+//			初始化本頁
+//************************************************************************************************************
+function hideSubMenu(){
+    var subMenuContainer = document .getElementById ("subMenuContainer");
+    subMenuContainer.style.visibility = "hidden";
+}
+
+
+-->
+</script>
+
+
+</head> 
+
+<body style="margin :0px;"  >
+
+<img  id="preLoadImageTagInHtmlBody" style="width:10px; height :10px; visibility : hidden; position:absolute ;" alt="配合圖片預載機制用的 img 標籤"  onload = "imagePreLoad()" />
+
+
+<!-- 圖檔預載頁 -->
+<div id="onloading" style="text-align:center; font-size:24px; font-family:標楷體; margin:100px; padding:100px; ">
+載入中........
+共計需載入 <span id="preloadimagescount" style="color:Red;"></span> 個圖檔，目前正載入第 <span id="preloadimagescount_no" style="color:Red;"></span> 個圖檔。
+</div>
+
+
+<!-- 主頁 -->
+<div id="mainboard" style="top:0px; position:absolute; visibility :hidden  ; width:100%; height :100%; overflow :hidden ;">
+
+    <!-- 標頭區 -->
+    <div id="toparea" style="position:absolute; top:0px; left:0px; width:100%; height:51px; z-index:5002; -moz-opacity:0.80; opacity: 0.80; overflow :hidden;">
+
+	    <!-- 開始 -->
+	    <div id="homebox" style="position:absolute; top:0px; left:0px; float:left; width:51px; height:51px; background:url(images/bar.png);">	
+	        <!-- LOGO圖 -->
+            <img id="start_logo" alt="按這裡開始操作" src="images/logo.gif" style="position:absolute; left:0px; top:0px; margin-top:0px; width:50px; height:50px; cursor:default; z-index: 10000; -moz-opacity:0.88; opacity: 0.88;"  />
+	    </div>
+    	
+	    <!-- -->
+	    <div id="topbar" style="position:absolute; float:right; height:51px; width:100%; top:0px; left:51px; background:url(images/bar.png); margin-right:0px;">
+
+            <!-- 系統標頭區 -->
+	        <div id ="titlebar" style="color:#ffffff; margin-left :15px; margin-top :2px;" >樣版系統 -- 使用者：__username__</div> 
+            
+		    <!-- 功能表區  -->
+		    <div id = "menubar" style="position:absolute; left:10px; top:26px; height:25px; color:#ffffff;">
+
+	        </div>
+    	
+		    <!-- 視窗狀態  -->
+
+    	  
+		    <!-- 小時鐘  -->
+    		
+	    </div >
+    </div> 
+    
+
+    <!-- 工作區 -->
+    <div  id="workingarea" style="z-index:10; top:51px; background:#3300FF;position:absolute ;width:100%; height:100%;position:absolute ;left:0;top:51px;" >
+	    <!--img src="images/bg/AIPdesktop.JPG" style="z-index:11;width:100%; height:100%; border:0px; left:0px; top:51px;" /-->
+        <div id="subMenuContainer" style=" z-index:1000;position:absolute ;left:0;top:0;width:100%; height:100%; visibility: visible ;background-image:url(images/empty.gif)" onclick="hideSubMenu()" ></div><!-- 作為 子選單的容器，順便用以 透明的遮住 後面的工作區  -->
+        <iframe id="workframe" name= "workframe" src="http://www.cyu.edu.tw" style="position: absolute ;z-index:100;width:100%; height:100%; border:0px; left:0px; top:0;visibility:visible"  ></iframe><!-- 作為主要的工作區 -->
+    </div>
+
+</div>
+
+<script type="text/javascript">
+<!--
+//alert("running");
+init();
+
+-->
+</script>
+
+</body>
+
+</html>
