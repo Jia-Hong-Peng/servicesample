@@ -1,0 +1,58 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-tw">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title>作業繳交系統登入</title>
+
+<script language ="javascript" type="text/javascript" >
+
+function goto(f){
+	
+	form1.page.value = f;
+	form1.submit();
+	
+}	
+
+</script>
+</head>
+
+<body>
+	
+<form id='form1' method='post' action='service.aspx'>
+<input type='hidden' name = 'page' />
+
+__username__，您好....
+
+<br />
+<a href="javascript:goto('Function1');">使用功能1</a>
+<br />
+
+<a href="javascript:goto('Function2');">使用功能2</a>
+<br />
+
+<a href="javascript:goto('Function3');">使用功能3</a>
+<br />
+
+<a href="javascript:goto('Query');">查詢</a>
+<br />
+
+<a href="javascript:goto('Edit');">編輯</a>
+<br />
+
+<a href="test3.aspx">test3</a>
+<br />
+
+<a href="javascript:goto('ReloadTemplate');">重整 template </a>
+<br />
+
+</form>
+
+</body>
+</html>
+
+
+
+
+
